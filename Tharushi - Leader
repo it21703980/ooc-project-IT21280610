@@ -1,0 +1,104 @@
+class GuestUser 
+{
+  protected: 
+       char Guest_ID;
+       char Guest_name[50];
+       char address[100];
+       char email[30];
+       int contact_no[10];
+       char NIC[12];
+
+  public:
+       GuestUser();
+       GuestUser(const char pguestid, const char pguestname[], const char 
+       pguestaddress[], const char pguestemail[], int guestno[], const char NIC[]);
+       void registerUser();
+       void searchRooms();
+       virtual void displayDetails();
+       ~GuestUser();
+};
+
+#include "GuestUser.h"
+
+class RegisteredCustomer
+{
+	protected:
+		char Username[10];
+		char Password[10];
+		
+	public:
+		RegisteredCustomer();
+		RegisteredCustomer(const char pUsername, const char pPassword, const char Guest_ID, const char pGuest_name[], const char paddress[], const char pemail[], int no[], const char NIC[]);
+        void login();
+        void checkLoginDetails();
+		    void displayDetails();
+		    void logout();
+		~RegisteredCustomer();
+};
+
+include "GuestUser.h"
+include <cstring>
+GustUser :: GuestUser()
+{
+  Guest_ID = 0;
+  strcpy(Guest_name,"");
+  strcpy(address,"");
+  strcpy(email,"");
+  strcpy(contact_no,"0000000000");
+  strcpy(NIC,"");
+}
+GuestUser :: GuestUser(const char pguestid, const char pguestname[], const char 
+       pguestaddress[], const char pguestemail[], int guestno[], const char NIC[])
+{
+  Guest_ID=pguestid;
+  strcpy(Guest_name, pguestname);
+  strcpy(address, pguestaddress);
+  strcpy(email, pguestemail);
+  strcpy(contact_no, guestno);
+  strcpy(NIC, )
+}
+void GuestUser:: registerUser()
+{
+}
+void GuestUser:: searchRooms()
+{
+}
+void GuestUser::displayDetails()
+{
+}
+GuestUser:: ~GuestUser()
+{ //Destructor
+}
+
+#include "RegisteredCustomer.h"
+#include <cstring>
+
+RegisteredCustomer :: RegisteredCustomer()
+{
+	strcpy(Username,"");
+	strcpy(Password,"");
+	
+}
+RegisteredCustomer :: RegisteredCustomer(const char Username[], const char Password[], const char Guest_ID, const char pGuest_name[], const char paddress[], const char pemail[], int no[], const char NIC[])
+{
+	strcpy(Username, pUsername);
+	strcpy(Password, pPassword);
+	
+}
+void RegisteredCustomer :: login()
+{
+}
+void RegisteredCustomer :: checkLoginDetails()
+{
+}
+void RegisteredCustomer :: displayDetails()
+{
+}
+void RegisteredCustomer :: logout()
+{
+	return 0;
+}
+RegisteredCustomer :: ~RegisteredCustomer()
+{
+	//Destructor
+}
