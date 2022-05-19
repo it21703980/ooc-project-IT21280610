@@ -1,0 +1,142 @@
+class Booking
+{
+private:
+	
+    char BookingID[10];
+    char BookingDescription[50];
+    double BookingPrice;
+    char BookingDate[10];
+
+   
+    public:
+    	
+    Booking();
+    Booking(const char bbookingID[],const char bbookingDescription[],double bbookingPrice, const char bbookingDate[]);
+    void calculateBookingPrice(int id, char bType[]);
+    void displayBookingPrice();
+   ~Booking();
+};
+
+#include "Registered Customer.h"
+#include "Payment.h"
+#include "Booking.h"
+#define SIZE1 5
+#define SIZE2 5
+#define SIZE3 5
+class Invoice
+{
+	private:
+		char invoiceID[10];
+		RegisteredCustomer *Recus[SIZE1];
+		Payment *pay[SIZE2];
+		Booking *book[SIZE3];
+		
+	public:
+		Invoice();
+		Invoice(const char iID[],RegisteredCustomer *cus[],Payment *py[],Booking *bk[]);
+		void BookingDetails();
+		void PaymentDetails();
+		void CustomerDetails();
+		~Invoice();
+};
+
+
+#include "Booking.h"
+#include<cstring>
+Booking::Booking()
+{
+strcpy(BookingID, "");
+strcpy(BookingDescription, "");
+strcpy(BookingDate, "");
+BookingPrice = 0;
+
+}
+Booking::Booking(const char bbookingID[],const char bbookingDate[], const char bbookingDescription[], double bbookingPrice)
+{
+strcpy(BookingID, bbookingID);
+strcpy(BookingDate, bbookingDate);
+strcpy(BookingDescription, bbookingDescription);
+BookingPrice = 0;
+}
+void Booking::calculateBookingPrice(int id, char bType[])
+{
+}
+void Booking::displayBookingPrice()
+{
+}
+Booking::~Booking()
+{
+}
+#include"Payment.h"
+#include"Invoice.h"
+
+
+
+#include<iostream>
+#include<cstring>
+#include "Registered Customer.h"
+#include "Payment.h"
+#include "Booking.h"
+#define SIZE1 5
+#define SIZE2 5
+#define SIZE3 5
+#include "Invoice.h"
+Invoice::Invoice()
+{
+	strcpy(invoiceID,"");
+	for(int i = 0;i < SIZE;i++)
+	{
+		Recus[i]=0;
+	}
+	for(int j = 0;j < SIZE;j++)
+	{
+		pay[j]=0;
+	}
+	for(int k = 0;k < SIZE;k++)
+	{
+		book[k]=0;
+	}
+}
+Invoice::Invoice(const char iID[],RegisteredCustomer *cus[],Payment *py[],Booking *bk[])
+{
+	strcpy(InvoiceID,iID);
+	for(int i = 0;i < SIZE;i++)
+	{
+		Recus[i]=cus[i];
+	}
+	for(int j = 0;j < SIZE;j++)
+	{
+		pay[j]=py[j];
+	}
+	for(int k = 0;k < SIZE;k++)
+	{
+		book[k]=bk[k];
+	}
+}
+void Invoice::BookingDetails()
+{
+	
+}
+void Invoice::CustomerDetails()
+{
+	
+}
+void Invoice::PaymentDetails()
+{
+	
+}
+Invoice::~Invoice()
+{
+	for(int i = 0;i < SIZE;i++)
+	{
+		Delete Recus[i];
+	}
+	for(int j = 0;j < SIZE;j++)
+	{
+		Delete pay[j];
+	}
+	for(int k = 0;k < SIZE;k++)
+	{
+		Delete book[k];
+	}
+}
