@@ -1,0 +1,39 @@
+class staff
+{
+	private :
+		char staff_ID[10];
+	    char staff_Name[30];
+	    
+	public :
+		void login(char s_ID[],char s_Name[]);
+		void comfirmBookingDetails();
+		void manageRoomDetails();
+		
+	    
+};
+
+
+
+#include "staff.h"
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+void staff :: login(char s_ID[],char s_Name[])
+{
+	strcpy(staff_ID, s_ID);
+	strcpy(staff_Name,s_Name);
+	
+	
+};
+
+void staff :: comfirmBookingDetails()
+{
+	
+};
+
+void staff :: manageRoomDetails()
+{
+	
+};
